@@ -59,7 +59,8 @@ def gh_request(method: str, url: str, token: str, **kwargs) -> requests.Response
     headers = kwargs.pop("headers", {})
     headers.update(
         {
-            "Authorization": f"Bearer {token}",
+            # Use the classic PAT/OAuth header scheme (works for both classic and fine-grained PATs).
+            "Authorization": f"token {token}",
             "Accept": "application/vnd.github+json",
             "X-GitHub-Api-Version": "2022-11-28",
         }
