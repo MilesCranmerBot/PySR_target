@@ -46,7 +46,7 @@ jobs:
           # Token with permissions to push a branch + open PR in the docs repo.
           # Create as a fine-grained PAT or GitHub App token.
           PYSR_DOCS_TOKEN: ${{ secrets.PYSR_DOCS_TOKEN }}
-          PYSR_DOCS_REPO: MilesCranmer/PySR_Docs
+          PYSR_DOCS_REPO: MilesCranmerBot/PySR_Docs
 
           # Where images live in the docs repo:
           PYSR_DOCS_IMAGES_DIR: images
