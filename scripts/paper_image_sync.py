@@ -320,12 +320,12 @@ def try_push_cleanup_commit(
 
 
 def main() -> None:
-    gh_token = env("GH_TOKEN")
+    gh_token = env("GH_TOKEN").strip()
     repo = env("REPO")
     pr_number = int(env("PR_NUMBER"))
 
     docs_repo = env("PYSR_DOCS_REPO")
-    docs_token = env("PYSR_DOCS_TOKEN")
+    docs_token = env("PYSR_DOCS_TOKEN").strip()
     docs_images_dir = env("PYSR_DOCS_IMAGES_DIR")
 
     max_width = int(env("MAX_WIDTH", "800"))
