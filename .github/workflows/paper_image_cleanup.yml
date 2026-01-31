@@ -17,7 +17,9 @@ jobs:
     if: >-
       github.event.pull_request != null &&
       contains(github.event.pull_request.labels.*.name, 'paper-image-sync')
-    runs-on: ubuntu-latest
+    # NOTE: ubuntu-latest has occasionally caused jobs to remain indefinitely queued
+    # on some new/edge repos. Pin to a known-good runner image for reliability.
+    runs-on: ubuntu-22.04
 
     steps:
       # IMPORTANT: pull_request_target runs with elevated permissions.
